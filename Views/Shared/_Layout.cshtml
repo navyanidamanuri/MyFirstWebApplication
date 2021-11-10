@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/css/site.css" rel="stylesheet" />
+
+</head>
+<body>
+    <header class="header">
+        <h1 class="logo"><a href="#">Logo</a></h1>
+        <ul class="main-nav">
+            <li><a href="/Home/Index">Tell about yourself</a></li>
+            <li><a href="/Home/Contact">Contact</a></li>
+            <li><a href="https://github.com/navyanidamanuri/ToDo-app.git">Github App1</a></li>
+            <li><a href="/Docter/CheckFever">Check Fever</a></li>
+        </ul>
+    </header>
+    <br />
+    <br />
+
+    <div class="content">
+        @RenderBody()
+    </div>
+    <br />
+    <br />
+    <footer>
+        <div class="content">
+            @{ var myname = "navya"; }
+            <p>my name is: @myname</p>
+            @{ var theDate = DateTime.Now.Date.ToLongDateString(); }
+            <p>The numeric value of the current date: @theDate</p>
+            </div>
+</footer>
+</body>
+</html>
+
