@@ -23,7 +23,11 @@ namespace MyFirstWebApplication.Controlers
             int x = int.Parse(txtGame);
             if (x >= 1 && x <= 100)
             {
-                int n = (int)HttpContext.Session.GetInt32("rndNumber");
+                int n = Convert.ToInt32(HttpContext.Session.GetInt32("rndNumber"));
+                if(n==0)
+                {
+                    ViewBag.info = "Session expired.please refresh the page";
+                }
                 if (x == n)
                 {
                     ViewBag.info = "Congrats, you won the game";
